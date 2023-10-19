@@ -1,0 +1,41 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Mascotas</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nombre de Mascota" formControlName="nombreMascota">
+            <mat-error *ngIf="addressForm.controls['nombreMascota'].hasError('required')">
+              Nombre de Mascota es <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Edad Mascota" formControlName="edadMascota">
+            <mat-error *ngIf="addressForm.controls['edadMascota'].hasError('required')">
+              Edad de Mascota es <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Raza" formControlName="raza">
+            <mat-error *ngIf="addressForm.controls['raza'].hasError('required')">
+              Raza de Mascota es <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Crear</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

@@ -1,0 +1,43 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Comida</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Tipo Comida" formControlName="tipoComida">
+            <mat-error *ngIf="addressForm.controls['tipoComida'].hasError('required')">
+              Tipo de Comida es <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Tipo Mascota" formControlName="tipoMascota">
+            <mat-error *ngIf="addressForm.controls['tipoMascota'].hasError('required')">
+              Tipo de Mascota es <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field floatLabel="always">
+              <input matInput type="number" class="example-right-align" formControlName="precio" placeholder="Precio">
+              <span matTextPrefix>$&nbsp;</span>
+            <mat-error *ngIf="addressForm.controls['precio'].hasError('required')">
+              Precio <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>      
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Crear</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
