@@ -26,7 +26,7 @@ export class FormDuenosComponent {
 
   private fb = inject(FormBuilder);
   addressForm = this.fb.group({
-    nombre: [null,Validators.required],
+    nombres: [null,Validators.required],
     apellido: [null,Validators.required],
     edad: [null,Validators.compose([
       Validators.required,Validators.pattern('^[5-99]+$')
@@ -37,7 +37,7 @@ export class FormDuenosComponent {
 
   onSubmit(): void {
     if(this.addressForm.valid){
-      this.dueno.Nombre = this.addressForm.controls['nombre'].value;
+      this.dueno.Nombre = this.addressForm.controls['nombres'].value;
       this.dueno.Apellido = this.addressForm.controls['apellido'].value;
       this.dueno.Edad = this.addressForm.controls['edad'].value;
       this.dueno.Direccion = this.addressForm.controls['direccion'].value;
